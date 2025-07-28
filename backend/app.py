@@ -27,9 +27,12 @@ jwt = JWTManager(app)
 
 #rutas
 app.register_blueprint(auth_bp, url_prefix='/api/auth')
-app.register_blueprint(auth_bp, url_prefix='/api/user')
+app.register_blueprint(user_bp, url_prefix='/api/user')
 
 #ejecutar servidor
 
-if __name__ == 'main':
+@app.route('/')
+def index():
+    return {"message": "Flask backend funcionando correctamente 🎉"}
+if __name__ == '__main__':
     app.run(debug=True)

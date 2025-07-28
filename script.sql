@@ -16,4 +16,6 @@ CREATE TABLE users (
   avatar_url TEXT
 );
 
+
 show tables;
+SELECT * FROM users;
