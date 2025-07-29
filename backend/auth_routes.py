@@ -7,6 +7,9 @@ import datetime
 
 auth_bp = Blueprint('auth', __name__)
 
+# -----------------------
+# Registro
+# -----------------------
 @auth_bp.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
@@ -22,6 +25,7 @@ def register():
     cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
     existing_user = cursor.fetchone()
     if existing_user:
+        cursor.close()
         return jsonify({"message": "El correo ya está registrado"}), 409
 
     # Encriptar contraseña
@@ -36,6 +40,9 @@ def register():
     return jsonify({"message": "Usuario registrado exitosamente"}), 201
 
 
+# -----------------------
+# Login
+# -----------------------
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
@@ -59,15 +66,19 @@ def login():
     if not bcrypt.checkpw(password.encode('utf-8'), hashed_pw.encode('utf-8')):
         return jsonify({"message": "Contraseña incorrecta"}), 401
 
-    # Generar token JWT válido 1 hora
+    # Generar token JWT con id como identity y email como claim adicional
     expires = datetime.timedelta(hours=1)
-    token = create_access_token(identity={"id": user_id, "email": user_email}, expires_delta=expires)
+    token = create_access_token(
+        identity=str(user_id),  # lo guardamos como string
+        additional_claims={"email": user_email, "name": name},
+        expires_delta=expires
+    )
 
     return jsonify({
         "message": "Login exitoso",
         "token": token,
         "user": {
-            "id": user_id,
+            "id": str(user_id),
             "name": name,
             "email": user_email
         }
