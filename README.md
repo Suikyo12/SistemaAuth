@@ -38,7 +38,8 @@ backend/
 
 ```bash
 git clone https://github.com/Suikyo12/SistemaAuth.git
-cd cruda-flask/backend
+cd sistemaAuth/backend
+```
 
 2. Crea y activa un entorno virtual:
 
@@ -46,12 +47,13 @@ cd cruda-flask/backend
 python -m venv venv
 source venv/bin/activate   # Linux/Mac
 venv\Scripts\activate      # Windows
+```
 
 3. Instala dependencias:
 
 ```bash
 pip install -r requirements.txt
-
+```
 4. Configura .env:
 
 ```bash
@@ -60,14 +62,22 @@ MYSQL_USER=root
 MYSQL_PASSWORD=tu_password
 MYSQL_DB=cruda_db
 JWT_SECRET_KEY=clave_super_secreta
-
+```
 5. Ejecuta el servidor:
 
 ```bash
 python app.py
+```
+## 🛠 Base de Datos
 
+Este proyecto usa **MySQL**.  
+Puedes inicializar la base con el script incluido (Requiere que tengas instalado MySQL):
 
-![Servidor corriendo](docs/flask_running.png)
-![Registro exitoso](docs/register.png)
-![Login con token](docs/login.png)
-![Perfil protegido](docs/profile.png)
+```bash
+mysql -u root -p < script.sql
+```
+
+![Servidor corriendo](docs/flaskrunning.png)
+![Registro exitoso](docs/registroexitoso.png)
+![Login con token](docs/loginexitoso.png)
+![Perfil protegido](docs/peticionperfil.png)
