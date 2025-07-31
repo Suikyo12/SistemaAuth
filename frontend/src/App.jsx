@@ -1,8 +1,11 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ParallaxProvider } from "react-scroll-parallax"; 
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Navbar from "./components/Navbar";
 import { getUserProfile } from "./services/api";
 import { useEffect, useState } from "react";
 
@@ -20,27 +23,27 @@ function App() {
   }, []);
 
   return (
-   <BrowserRouter>
-   <nav style={{margin: "10px" }}>
-    <Link to="/login" style={{marginRight: "10px" }}>Iniciar Sesión</Link>
-    <Link to= "/register" style={{marginRight: "10px"}}>Registrarse</Link>
-    {isAuthenticated &&<Link to= "/profile">Perfil</Link>}
-    </nav>
-    
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route 
-        path="/profile" 
-        element={
-          <ProtectedRoute> 
-            <Profile />
-          </ProtectedRoute>
-        } 
-      />
-      <Route path="/" element={<h1>Bienvenido al sistema de Registro.</h1>} />
-    </Routes>
+    <ParallaxProvider>
+    <BrowserRouter>
+      <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route 
+          path="/profile" 
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          } 
+        />
+        {/* Redirección de raíz a home */}
+        <Route path="/" element={<Navigate to="/home" />} />
+      </Routes>
     </BrowserRouter>
+    </ParallaxProvider>
   );
 }
 

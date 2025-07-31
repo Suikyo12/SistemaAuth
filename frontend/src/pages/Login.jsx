@@ -20,6 +20,7 @@ export default function Login() {
     };
 
     return (
+        <div className="form-container">
         <form onSubmit={handleSubmit}>
             <h2>Login</h2>
             {error && <p style ={{color: 'red'}}>{error}</p>}
@@ -39,6 +40,7 @@ export default function Login() {
             /><br/>
             <button type="submit">Ingresar</button>
         </form>
+        </div>
     );
 
 }
