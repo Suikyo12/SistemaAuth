@@ -21,7 +21,7 @@ export default api;
 
 export const registerUser = (userdata) => api.post('/auth/register', userdata); //funcion que recibe datos de formulario, y mediante peticion POST envía userDAta.
 
-export const loginUser = (credentials) => api.post('auth/login', credentials); //funcion para login, mada datos al backen y espera token
+export const loginUser = (credentials) => api.post('/auth/login', credentials); //funcion para login, mada datos al backen y espera token
 
 export const getUserProfile = () => api.get('/user/profile'); //funcion para obtener el perfil mediante GET a user/profile
 

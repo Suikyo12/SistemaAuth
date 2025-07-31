@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault(); //evita que se recargue la página
 
     try {
-        const response = await axios.post("http://localhost/5000/api/auth/register", {
+        const response = await axios.post("http://localhost:5000/api/auth/register", {
             name,
             email,
             password
@@ -56,7 +56,7 @@ function Register() {
             onChange={(e) => setPassword(e.target.value)}
             />
             <br />
-            <button type="submit">Regístese</button>
+            <button type="submit">Regístrese</button>
         </form>
         {message && <p>{message}</p>}
     </div>
