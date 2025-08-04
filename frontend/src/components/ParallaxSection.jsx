@@ -10,7 +10,7 @@ export default function ParallaxSection({ image, title, subtitle }) {
       <div className="parallax-overlay">
         <div className="parallax-card">
           <h1>{title}</h1>
-          <p>{subtitle}</p>
+          {subtitle}
         </div>
       </div>
     </ParallaxBanner>

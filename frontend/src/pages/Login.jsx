@@ -20,26 +20,28 @@ export default function Login() {
     };
 
     return (
-        <div className="form-container">
-        <form onSubmit={handleSubmit}>
-            <h2>Login</h2>
+        <div className="page-login">
+        <div className="auth-card">
+            <h2>Iniciar Sesión</h2>
             {error && <p style ={{color: 'red'}}>{error}</p>}
-            <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            /><br/>
-            <input 
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required 
-            /><br/>
-            <button type="submit">Ingresar</button>
+            <form onSubmit={handleSubmit}>            
+                <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                />
+                <input 
+                type="password"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required 
+                />
+                <button type="submit">Ingresar</button>
         </form>
+        </div>
         </div>
     );
 

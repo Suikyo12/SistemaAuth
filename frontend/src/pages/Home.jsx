@@ -1,9 +1,9 @@
 import ParallaxSection from "../components/ParallaxSection";
-import spaceimg from "../assets/spacebackground.jpg";
+import spaceimg from "../assets/home.jpg";
 
 export default function Home() {
   return (
-    <div className="home-container">
+    <div className="page-home">
       <ParallaxSection
         image={spaceimg}
         title="Bienvenido a mi Portafolio"

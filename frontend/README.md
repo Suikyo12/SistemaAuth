@@ -1,12 +1,51 @@
-# React + Vite
+# 🎨 Frontend - Sistema de Registro de Usuarios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es el **Frontend** del proyecto **Sistema de Registro de Usuarios**, desarrollado en **React** con integración al backend en Flask.  
+La aplicación permite el registro, inicio de sesión y gestión de perfil de usuarios autenticados mediante JWT.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías Utilizadas  
 
-## Expanding the ESLint configuration
+- [React 18](https://react.dev/)  
+- [React Router DOM](https://reactrouter.com/en/main)  
+- [Axios](https://axios-http.com/)  
+- [React Scroll Parallax](https://react-scroll-parallax.damnthat.tv/)  
+- [CSS3](https://developer.mozilla.org/es/docs/Web/CSS)   
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📌 Características  
+
+- Página de inicio con efecto **Parallax**.  
+- Registro de nuevos usuarios con validación de campos.  
+- Inicio de sesión con **JWT** y almacenamiento en **localStorage**.  
+- Perfil de usuario protegido con rutas privadas.  
+- Cierre de sesión seguro.  
+- Diseño moderno, responsivo y con imágenes personalizadas en cada página.  
+
+---
+
+```bash
+git clone https://github.com/Suikyo12/SistemaAuth.git
+cd sistemaAuth/frontend
+```
+
+```bash
+npm install
+```
+
+```bash
+Accede desde el navegador a: http://localhost:5173
+
+```
+
+Para que este funcione debe estar corriendo el servidor backend que proporcionamos en la carpeta backend de este mismo proyecto.
+
+
+![Página de inicio](docsfront/inicio.png)
+![Login](docs/iniciosesion.png)
+![Registro usuario](docs/registrousuario.png)
+![Registro exitoso](docs/registroexitoso.png)
+![Perfil protegido](docs/Perfil.png)
+![Backend validando información](docs/registroenbackend.png)

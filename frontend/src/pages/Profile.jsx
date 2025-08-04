@@ -18,16 +18,26 @@ export default function Profile() {
         navigate("/login"); //Redirigimos al login
     }
 
-    if (error) return <p>{error}</p>;
-    if (!user) return <p>Cargando perfil....</p>;
+    if (error) return (
+    <div className="auth-card">
+    <p style= {{color: "red"}}> {error}</p>;
+    </div>
+    );
+
+    if (!user) return (
+        <div className="auth-card">
+            <p>Cargando perfil....</p>;
+        </div>
+    );
 
     return (
-        <div>
+        <div className="page-profile">
+        <div className="auth-card">
             <h2>Perfil de Usuario</h2>
-            <p>Nombre: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>ID: {user.id}</p>
-            <p>Email desde token: {user.email_token}</p>
+            <p><strong>Nombre: </strong> {user.name}</p>
+            <p><strong>Email: </strong> {user.email}</p>
+            <p><strong>ID: </strong> {user.id}</p>
+            <p><strong>Email desde token: </strong> {user.email_token}</p>
 
             <button
                 onClick={handleLogout}
@@ -43,6 +53,7 @@ export default function Profile() {
                 >
                     Cerrar Sesión
                 </button>
+        </div>
         </div>
     );
 }

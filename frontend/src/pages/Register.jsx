@@ -26,7 +26,8 @@ export default function Register() {
   };
 
   return (
-    <div className="form-container">
+    <div className="page-register">
+    <div className="auth-card">
       <h2>Registro de Usuario</h2>
       <form onSubmit={handleRegister}>
         <input 
@@ -36,15 +37,13 @@ export default function Register() {
           onChange={(e) => setName(e.target.value)}
           required
         />
-        <br />
         <input 
           type="email"
           placeholder="Correo Electrónico"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-        />
-        <br />
+        />       
         <input 
           type="password"
           placeholder="Contraseña"
@@ -58,6 +57,7 @@ export default function Register() {
         </button>
       </form>
       {message && <p>{message}</p>}
+    </div>
     </div>
   );
 }
