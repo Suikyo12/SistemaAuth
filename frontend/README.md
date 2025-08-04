@@ -44,8 +44,8 @@ Para que este funcione debe estar corriendo el servidor backend que proporcionam
 
 
 ![Página de inicio](docsfront/inicio.png)
-![Login](docs/iniciosesion.png)
-![Registro usuario](docs/registrousuario.png)
-![Registro exitoso](docs/registroexitoso.png)
-![Perfil protegido](docs/Perfil.png)
-![Backend validando información](docs/registroenbackend.png)
+![Login](docsfront/iniciosesion.png)
+![Registro usuario](docsfront/registrousuario.png)
+![Registro exitoso](docsfront/registroexitoso.png)
+![Perfil protegido](docsfront/Perfil.png)
+![Backend validando información](docsfront/registroenbackend.png)
